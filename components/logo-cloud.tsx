@@ -119,7 +119,7 @@ export function LogoCloud() {
   const { t } = useLanguage()
 
   return (
-    <div className="relative z-20 pb-24 pt-8 bg-white dark:bg-[#09090B] transition-colors duration-300 overflow-hidden">
+    <div id="about" className="relative z-20 pb-24 pt-8 bg-white dark:bg-[#09090B] transition-colors duration-300 overflow-hidden">
       <div className="w-full flex justify-center px-6">
         <div className="w-full max-w-4xl text-center">
           <motion.p

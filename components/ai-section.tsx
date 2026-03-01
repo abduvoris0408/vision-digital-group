@@ -14,7 +14,7 @@ const agents = [
 
 export function AISection() {
   return (
-    <div className="relative z-20 py-40 bg-white dark:bg-[#09090B] transition-colors duration-300">
+    <div id="ai-section" className="relative z-20 py-40 bg-white dark:bg-[#09090B] transition-colors duration-300">
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{

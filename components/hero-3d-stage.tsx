@@ -6,13 +6,10 @@ import { useTheme } from 'next-themes'
 import { useLanguage } from '@/contexts/language-context'
 import { DashboardMockup } from "./dashboard-mockup"
 import { Navbar } from "./navbar"
-import { LogoCloud } from "./logo-cloud"
-import { FeatureCardsSection } from "./feature-cards-section"
-import { AISection } from "./ai-section"
-import { ProductDirectionSection } from "./product-direction-section"
-import { WorkflowsSection } from "./workflows-section"
-import { TechnologiesShowcase } from "./technologies-showcase"
-import { PortfolioShowcase } from "./portfolio-showcase"
+import { AboutSection } from "./about-section"
+import { ServicesSection } from "./services-section"
+import { CaseStudiesSection } from "./case-studies-section"
+import { BlogSection } from "./blog-section"
 import { ContactSection } from "./contact-section"
 import { CTASection } from "./cta-section"
 import { Footer } from "./footer"
@@ -27,7 +24,6 @@ export function Hero3DStage() {
     setMounted(true)
   }, [])
 
-  // Provide default values while component is mounting
   const currentTheme = mounted ? theme : 'dark'
   const currentTranslation = (key: string) => {
     try {
@@ -60,7 +56,7 @@ export function Hero3DStage() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden bg-white dark:bg-[#09090B] transition-colors duration-300">
+      <section id="hero-top" className="relative min-h-screen overflow-hidden bg-white dark:bg-[#09090B] transition-colors duration-300">
         <Navbar />
 
         {/* Subtle glow */}
@@ -72,7 +68,7 @@ export function Hero3DStage() {
             transform: "translate(-50%, -30%)",
             width: "1200px",
             height: "800px",
-            background: currentTheme === 'dark' 
+            background: currentTheme === 'dark'
               ? "radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%)"
               : "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%)",
           }}
@@ -80,14 +76,23 @@ export function Hero3DStage() {
 
         {/* Main content */}
         <div className="relative z-10 pt-28 flex flex-col">
-          {/* Hero text - contained and centered */}
+          {/* Hero text */}
           <div className="w-full flex justify-center px-6 mt-16">
             <div className="w-full max-w-6xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6"
+              >
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-sm text-blue-500 font-medium">Vision Digital Group</span>
+              </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-[56px] font-medium text-gray-900 dark:text-white leading-[1.1] text-balance"
+                className="text-4xl md:text-5xl lg:text-[56px] font-bold text-gray-900 dark:text-white leading-[1.1] text-balance"
               >
                 {currentTranslation('hero.title')}
               </motion.h1>
@@ -95,7 +100,7 @@ export function Hero3DStage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="mt-6 text-lg text-gray-700 dark:text-zinc-400"
+                className="mt-6 text-lg text-gray-600 dark:text-zinc-400 max-w-2xl"
               >
                 {currentTranslation('hero.subtitle')}
               </motion.p>
@@ -103,20 +108,43 @@ export function Hero3DStage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8 flex items-center gap-6"
+                className="mt-8 flex flex-wrap items-center gap-4"
               >
-                <button className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors text-sm">
+                <button
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white font-semibold rounded-xl transition-opacity text-sm shadow-lg shadow-blue-500/25"
+                >
                   {currentTranslation('hero.cta')}
                 </button>
-                <button className="text-gray-700 dark:text-zinc-300 font-medium hover:text-gray-900 dark:hover:text-white transition-colors flex items-center gap-2 text-sm">
-                  <span className="text-gray-500 dark:text-zinc-500">{currentTranslation('hero.secondary')}:</span> Our portfolio
+                <button
+                  onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="flex items-center gap-2 text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm font-medium"
+                >
+                  {currentTranslation('hero.secondary')}
                   <span aria-hidden="true">→</span>
                 </button>
+              </motion.div>
+
+              {/* Quick service pills */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="mt-10 flex flex-wrap gap-2"
+              >
+                {['App Development', 'AI Chatbots', 'Web Design', 'SEO', 'Social Media', 'Email Marketing', 'CRM', 'Ad Campaigns'].map((s) => (
+                  <span
+                    key={s}
+                    className="text-xs px-3 py-1.5 bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400 rounded-full border border-gray-200 dark:border-zinc-700"
+                  >
+                    {s}
+                  </span>
+                ))}
               </motion.div>
             </div>
           </div>
 
-          {/* 3D Stage - full bleed */}
+          {/* 3D Dashboard Stage */}
           <div
             className="relative mt-16"
             style={{
@@ -139,7 +167,6 @@ export function Hero3DStage() {
               }}
             />
 
-            {/* Perspective container */}
             <div
               style={{
                 transform: `translateY(${yOffset}px)`,
@@ -153,7 +180,6 @@ export function Hero3DStage() {
                 position: "relative",
               }}
             >
-              {/* Transformed base */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -187,13 +213,11 @@ export function Hero3DStage() {
             </div>
           </div>
 
-          <LogoCloud />
-          <FeatureCardsSection />
-          <AISection />
-          <ProductDirectionSection />
-          <WorkflowsSection />
-          <TechnologiesShowcase />
-          <PortfolioShowcase />
+          {/* All Sections */}
+          <AboutSection />
+          <ServicesSection />
+          <CaseStudiesSection />
+          <BlogSection />
           <ContactSection />
           <CTASection />
           <Footer />

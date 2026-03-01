@@ -32,7 +32,7 @@ export function TechnologiesShowcase() {
   ]
 
   return (
-    <section id="technologies" className="relative py-40 px-6 bg-white dark:bg-[#09090B] transition-colors duration-300">
+    <section id="blog" className="relative py-40 px-6 bg-white dark:bg-[#09090B] transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <motion.div

@@ -59,7 +59,7 @@ export function ContactSection() {
           >
             <Mail className="w-8 h-8 text-blue-400 mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
-            <p className="text-gray-700 dark:text-zinc-400">{t('contact.email')}</p>
+          <p className="text-gray-700 dark:text-zinc-400">contact@visiondigitalgroup.com</p>
           </motion.div>
 
           <motion.div
@@ -95,7 +95,8 @@ export function ContactSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-zinc-800 rounded-xl p-8 md:p-12 max-w-3xl mx-auto"
         >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Send us a message</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Send us a message</h2>
+          <p className="text-gray-500 dark:text-zinc-500 text-sm mb-8">We typically respond within 24 hours. Tell us about your business and what you need.</p>
           
           {submitted && (
             <div className="mb-8 p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400">
