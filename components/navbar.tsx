@@ -57,7 +57,7 @@ export function Navbar() {
 					{/* Logo */}
 					<div className='flex items-center'>
 						<Image
-							src='/vision_digital_group_logo_adaptive.svg'
+							src='/Logo.png'
 							alt='Vision Digital Group'
 							width={250}
 							height={65}

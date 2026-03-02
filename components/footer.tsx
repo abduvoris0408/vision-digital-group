@@ -44,7 +44,7 @@ export function Footer() {
 					{/* Logo + tagline */}
 					<div className='col-span-2 md:col-span-1'>
 						<Image
-							src='/vision_digital_group_logo_adaptive.svg'
+							src='/Logo.png'
 							alt='Vision Digital Group'
 							width={160}
 							height={45}
