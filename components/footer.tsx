@@ -24,8 +24,8 @@ export function Footer() {
 		],
 		Connect: [
 			{
-				label: 'contact@visiondigitalgroup.com',
-				href: 'mailto:contact@visiondigitalgroup.com',
+				label: 'visiondigitalgroup01@gmail.com',
+				href: 'mailto:visiondigitalgroup01@gmail.com',
 			},
 			{ label: 'Instagram', href: '#' },
 			{ label: 'LinkedIn', href: '#' },
