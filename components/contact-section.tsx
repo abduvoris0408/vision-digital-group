@@ -19,10 +19,7 @@ export function ContactSection() {
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
 		const { name, value } = e.target
-		setFormData(prev => ({
-			...prev,
-			[name]: value,
-		}))
+		setFormData(prev => ({ ...prev, [name]: value }))
 	}
 
 	const handleSubmit = (e: React.FormEvent) => {
@@ -39,7 +36,7 @@ export function ContactSection() {
 			id='contact'
 			className='relative py-40 px-6 bg-white dark:bg-[#09090B] min-h-screen flex items-center transition-colors duration-300'
 		>
-			<div className='w-full max-w-6xl mx-auto'>
+			<div className='w-full max-w-7xl mx-auto'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +53,7 @@ export function ContactSection() {
 				</motion.div>
 
 				<div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-16'>
-					{/* Contact Info Cards */}
+					{/* Email */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -66,13 +63,14 @@ export function ContactSection() {
 					>
 						<Mail className='w-8 h-8 text-blue-400 mb-4' />
 						<h3 className='text-lg font-semibold text-gray-900 dark:text-white mb-2'>
-							Email
+							{t('contact.emailLabel')}
 						</h3>
 						<p className='text-gray-700 dark:text-zinc-400'>
-							visiondigitalgroup01@gmail.com
+							{t('contact.email')}
 						</p>
 					</motion.div>
 
+					{/* Phone */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -89,6 +87,7 @@ export function ContactSection() {
 						</p>
 					</motion.div>
 
+					{/* Location */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -115,17 +114,15 @@ export function ContactSection() {
 					className='bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-zinc-800 rounded-xl p-8 md:p-12 max-w-3xl mx-auto'
 				>
 					<h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>
-						Send us a message
+						{t('contact.sendTitle')}
 					</h2>
 					<p className='text-gray-500 dark:text-zinc-500 text-sm mb-8'>
-						We typically respond within 24 hours. Tell us about your
-						business and what you need.
+						{t('contact.sendSubtitle')}
 					</p>
 
 					{submitted && (
 						<div className='mb-8 p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400'>
-							Thank you for your message! We'll get back to you
-							soon.
+							{t('contact.successMsg')}
 						</div>
 					)}
 
@@ -133,7 +130,7 @@ export function ContactSection() {
 						<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
 							<div>
 								<label className='block text-sm font-medium text-gray-900 dark:text-white mb-2'>
-									Name
+									{t('contact.name')}
 								</label>
 								<input
 									type='text'
@@ -142,12 +139,12 @@ export function ContactSection() {
 									onChange={handleChange}
 									required
 									className='w-full px-4 py-3 bg-gray-100 dark:bg-zinc-800/50 border border-gray-300 dark:border-zinc-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-zinc-500 focus:outline-none focus:border-blue-500 transition-colors'
-									placeholder='Your name'
+									placeholder={t('contact.namePlaceholder')}
 								/>
 							</div>
 							<div>
 								<label className='block text-sm font-medium text-gray-900 dark:text-white mb-2'>
-									Email
+									{t('contact.emailLabel')}
 								</label>
 								<input
 									type='email'
@@ -156,14 +153,14 @@ export function ContactSection() {
 									onChange={handleChange}
 									required
 									className='w-full px-4 py-3 bg-gray-100 dark:bg-zinc-800/50 border border-gray-300 dark:border-zinc-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-zinc-500 focus:outline-none focus:border-blue-500 transition-colors'
-									placeholder='your@email.com'
+									placeholder={t('blog.emailPlaceholder')}
 								/>
 							</div>
 						</div>
 
 						<div>
 							<label className='block text-sm font-medium text-gray-900 dark:text-white mb-2'>
-								Subject
+								{t('contact.subject')}
 							</label>
 							<input
 								type='text'
@@ -172,13 +169,13 @@ export function ContactSection() {
 								onChange={handleChange}
 								required
 								className='w-full px-4 py-3 bg-gray-100 dark:bg-zinc-800/50 border border-gray-300 dark:border-zinc-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-zinc-500 focus:outline-none focus:border-blue-500 transition-colors'
-								placeholder='Project inquiry'
+								placeholder={t('contact.subjectPlaceholder')}
 							/>
 						</div>
 
 						<div>
 							<label className='block text-sm font-medium text-gray-900 dark:text-white mb-2'>
-								Message
+								{t('contact.message')}
 							</label>
 							<textarea
 								name='message'
@@ -187,7 +184,7 @@ export function ContactSection() {
 								required
 								rows={6}
 								className='w-full px-4 py-3 bg-gray-100 dark:bg-zinc-800/50 border border-gray-300 dark:border-zinc-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-zinc-500 focus:outline-none focus:border-blue-500 transition-colors resize-none'
-								placeholder='Tell us about your project...'
+								placeholder={t('contact.messagePlaceholder')}
 							/>
 						</div>
 
@@ -196,7 +193,7 @@ export function ContactSection() {
 							className='w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2'
 						>
 							<Send className='w-5 h-5' />
-							Send Message
+							{t('contact.send')}
 						</button>
 					</form>
 				</motion.div>
