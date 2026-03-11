@@ -46,7 +46,7 @@ export function Footer() {
 	}
 
 	return (
-		<footer className='border-t border-gray-200 dark:border-zinc-800 py-16 px-6 bg-gray-50 dark:bg-[#09090B] transition-colors duration-300'>
+		<footer aria-label='Site footer' className='border-t border-gray-200 dark:border-zinc-800 py-16 px-6 bg-gray-50 dark:bg-[#09090B] transition-colors duration-300'>
 			<div className='max-w-7xl mx-auto'>
 				<div className='grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 pb-12 border-b border-gray-200 dark:border-zinc-800'>
 					{/* Logo + tagline */}
@@ -57,7 +57,7 @@ export function Footer() {
 									? '/Logowhite.png'
 									: '/Logoblack.png'
 							}
-							alt='Vision Digital Group'
+							alt='Vision Digital Group - Digital Agency Logo'
 							width={160}
 							height={45}
 							className='h-10 w-auto object-contain mb-4'

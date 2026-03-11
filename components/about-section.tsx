@@ -48,6 +48,7 @@ export function AboutSection() {
 	return (
 		<section
 			id='about'
+			aria-labelledby='about-heading'
 			className='relative py-32 px-6 bg-white dark:bg-[#09090B] transition-colors duration-300 overflow-hidden'
 		>
 			{/* Background decoration */}
@@ -71,7 +72,7 @@ export function AboutSection() {
 								{t('about.whoWeAre')}
 							</span>
 						</div>
-						<h2 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-6'>
+						<h2 id='about-heading' className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-6'>
 							{t('about.title')}
 						</h2>
 						<p className='text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-6'>

@@ -34,6 +34,7 @@ export function ContactSection() {
 	return (
 		<section
 			id='contact'
+			aria-labelledby='contact-heading'
 			className='relative py-40 px-6 bg-white dark:bg-[#09090B] min-h-screen flex items-center transition-colors duration-300'
 		>
 			<div className='w-full max-w-7xl mx-auto'>
@@ -44,9 +45,9 @@ export function ContactSection() {
 					transition={{ duration: 0.6 }}
 					className='text-center mb-20'
 				>
-					<h1 className='text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6'>
+					<h2 className='text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6'>
 						{t('contact.title')}
-					</h1>
+					</h2>
 					<p className='text-xl text-gray-700 dark:text-zinc-400 max-w-2xl mx-auto'>
 						{t('contact.subtitle')}
 					</p>

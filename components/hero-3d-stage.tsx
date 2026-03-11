@@ -62,6 +62,7 @@ export function Hero3DStage() {
 		<>
 			<section
 				id='hero-top'
+				aria-label='Vision Digital Group - Digital Solutions for Small Businesses'
 				className='relative min-h-screen overflow-hidden bg-white dark:bg-[#09090B] transition-colors duration-300'
 			>
 				<Navbar />

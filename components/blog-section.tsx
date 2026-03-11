@@ -76,6 +76,7 @@ export function BlogSection() {
 	return (
 		<section
 			id='blog'
+			aria-labelledby='blog-heading'
 			className='relative py-32 px-6 bg-gray-50 dark:bg-zinc-950 transition-colors duration-300 overflow-hidden'
 		>
 			<div className='absolute inset-0 pointer-events-none'>
@@ -112,7 +113,7 @@ export function BlogSection() {
 				</motion.div>
 
 				{/* Featured post */}
-				<motion.div
+				<motion.article
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
@@ -148,7 +149,7 @@ export function BlogSection() {
 							</div>
 						</div>
 					</div>
-				</motion.div>
+				</motion.article>
 
 				{/* Rest of posts */}
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>

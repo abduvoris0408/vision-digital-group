@@ -98,6 +98,7 @@ export function ServicesSection() {
 	return (
 		<section
 			id='services'
+			aria-labelledby='services-heading'
 			className='relative py-32 px-6 bg-gray-50 dark:bg-zinc-950 transition-colors duration-300 overflow-hidden'
 		>
 			{/* Background */}
@@ -127,7 +128,7 @@ export function ServicesSection() {
 							{t('services.whatWeDo')}
 						</span>
 					</div>
-					<h2 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4'>
+					<h2 id='services-heading' className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4'>
 						{t('services.everythingTitle')}
 					</h2>
 					<p className='text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg'>
